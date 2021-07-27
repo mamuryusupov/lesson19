@@ -1,41 +1,43 @@
-.main {
-    width: 300px;
-    height: 300px;
+* {
+    box-sizing: border-box;
 }
 
-.square {
+.container {
+    margin: 32px;
+}
+
+.rect {
+    margin: 16px;
+    background-color: coral;
+    text-align: center;
+    line-height: 100px;
     width: 100px;
     height: 100px;
-    background-color: coral;
-    position: absolute;
-    animation: move 4s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
+    opacity: 0.5;
 }
 
-@keyframes move {
-    0% {
-        left: 0;
-        right: 0;
-        background-color: coral;
-    }
-    25% {
-        left: 300px;
-        top: 0;
-        background-color: cornflowerblue;
-    }
-    50% {
-        left: 300px;
-        top: 300px;
-    }
-    75% {
-        left: 0;
-        top: 300px;
-        background-color: aqua;
-    }
-    100% {
-        left: 0;
-        top: 0;
-        background-color: yellowgreen;
-    }
+.rect:hover {
+    width: 100%;
+    opacity: 1;
+    transition: width 2s, opacity 0.5s;
+}
+
+.lenear {
+    transition-timing-function: linear;
+}
+
+.ease {
+    transition-timing-function: ease;
+}
+
+.ease-in {
+    transition-timing-function: ease-in;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+}
+
+.ease-in-out {
+    transition-timing-function: ease-in-out;
 }

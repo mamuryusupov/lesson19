@@ -1,37 +1,41 @@
-* {
-    box-sizing: border-box;
+.main {
+    width: 300px;
+    height: 300px;
 }
 
-.container {
-    margin: 16px;
-}
-
-.rect {
+.square {
     width: 100px;
     height: 100px;
     background-color: coral;
-    margin: 16px;
-    opacity: 0.5;
+    position: absolute;
+    animation: move 4s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
 }
 
-.rect:hover {
-    width: 100%;
-    opacity: 1;
-    transition: width 1s, opacity 5s;
-}
-
-.rect:nth-child(2) {
-    transition-timing-function: linear;
-}
-
-.rect:nth-child(3) {
-    transition-timing-function: ease-in-out;
-}
-
-.rect:nth-child(4) {
-    transition-timing-function: ease-in;
-}
-
-.rect:nth-child(5) {
-    transition-timing-function: ease-out;
+@keyframes move {
+    0% {
+        left: 0;
+        right: 0;
+        background-color: coral;
+    }
+    25% {
+        left: 300px;
+        top: 0;
+        background-color: cornflowerblue;
+    }
+    50% {
+        left: 300px;
+        top: 300px;
+    }
+    75% {
+        left: 0;
+        top: 300px;
+        background-color: aqua;
+    }
+    100% {
+        left: 0;
+        top: 0;
+        background-color: yellowgreen;
+    }
 }
